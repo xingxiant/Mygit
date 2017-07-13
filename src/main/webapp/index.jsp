@@ -1,209 +1,192 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>	
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<head>
 	<meta charset="utf-8">
-	<title>Bootstrap, from Twitter</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-	<!-- Le styles -->
-	<link href="${pageContext.request.contextPath }/css/bootstrap/css/bootstrap.css"
-		rel="stylesheet">
-		<link href="${pageContext.request.contextPath }/css/bootstrap/css/bootstrap-responsive.css"
-		rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>主页</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/head.css">
+	<script src="js/jquery-3.1.1.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<style type="text/css">
-	body {
-		padding-top: 60px;
-		padding-bottom: 40px;
-	}
-	
-	.sidebar-nav {
-		padding: 9px 0;
-	}
-	
-	@media ( max-width : 980px) {
-		/* Enable use of floated navbar text */
-		.navbar-text.pull-right {
-			float: none;
-			padding-left: 5px;
-			padding-right: 5px;
+		.content{
+			width: 1020px;
+			margin-top:20px;
+			margin-left: auto;
+			margin-right: auto;
+				 
 		}
-	}
-</style>
+		.leftcontent{
+			margin-left: 0px ;
+			margin-right: 0px;
+			border: none;
+		}
+		.content_right_link{
+			font-size: 18px;
+			padding: 20px auto;
+		}
+		.content_right_link_div{
+			margin-bottom: 20px;
+		}
+		.first{
+			background-color: transparent;
+			
+		}
+		.last{
+			background-color: blue;
+			
+		}
+		.content_right_in{
+			margin-bottom: 20px;
+		}
+		#content_right_link_id>ul>li>a{
+			background-color: transparent;
+			border-radius:0px;
+		}
+		.glyphicon-th-large{
+			color: #B07219;
+		}
 	
-	<!-- Fav and touch icons -->
-	<link rel="apple-touch-icon-precomposed" sizes="144x144"
-		href="http://v2.bootcss.com/assets/ico/apple-touch-icon-144-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114"
-		href="http://v2.bootcss.com/assets/ico/apple-touch-icon-114-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72"
-		href="http://v2.bootcss.com/assets/ico/apple-touch-icon-72-precomposed.png">
-	<link rel="apple-touch-icon-precomposed"
-		href="http://v2.bootcss.com/assets/ico/apple-touch-icon-57-precomposed.png">
-	<link rel="shortcut icon"
-		href="http://v2.bootcss.com/assets/ico/favicon.png">
+	</style>
+	<script type="text/javascript">
+		var last = null;
+		$(document).ready(function(){
+			a=$("#content_right_link_id ul li a");
+			for(i=0,len=a.length;i<len;i++){
+			    a[i].onclick=function(){
+			    	if(last){
+						last.style.backgroundColor="transparent";
+						last.style.borderBottom="none";
+						
+					}
+					this.style.backgroundColor="transparent";
+					this.style.borderBottom="2px solid #E36209";
+					last=this;
+			    }
+			}
+		});
+		
+	</script>
+	
 </head>
-
-<body>
-
-	<div class="navbar navbar-inverse navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<button type="button" class="btn btn-navbar" data-toggle="collapse"
-					data-target=".nav-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<a class="brand" href="#">Project name</a>
-				<div class="nav-collapse collapse">
-					<p class="navbar-text pull-right">
-						Logged in as <a href="#" class="navbar-link">Username</a>
-					</p>
-					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
+<body >
+	<div class="myheader">
+		<div class="mycontainer row">
+			<div class="col-lg-4 row " >
+				<div class="col-lg-2">
+					<a href="www.baidu.com"><span class="glyphicon glyphicon-heart"></span></a>
 				</div>
-				<!--/.nav-collapse -->
+				<div class="form-group col-lg-10 " id="divhead1">
+					<form class="myform">
+						<input type="text" class="form-control" id="search" placeholder="search">
+					</form>
+				</div>
 			</div>
-		</div>
+			<div class="col-lg-5" id="divhead2">
+				<a class="btn mylink" href="#" role="button">Link1</a>
+				<a class="btn mylink" href="#" role="button">Link2</a>
+				<a class="btn mylink" href="#" role="button">Link3</a>
+				<a class="btn mylink" href="#" role="button">Link4</a>
+			</div>
+			<div class="col-lg-3 text-right btn-group " id="divhead3">
+			    <img src="images/head.jpg" class="imagehead img-rounded">
+				<a href="" class="btn dropdown-toggle mylink" id="imagebutton3" data-toggle="dropdown">
+			    	<span class="caret"></span>
+			    	
+		    	</a>
+				<ul class="dropdown-menu" > 
+					<li class="text-center">Signed in as xingxiant</li>
+					<li role="separator" class="divider"></li>
+					<li class="text-center">
+						<a href="www.baidu.com">选项1</a>
+					</li>
+					<li class="text-center">
+						<a href="www.baidu.com">选项2</a>
+					</li>
+					<li class="text-center">
+						<a href="www.baidu.com">选项3</a>
+					</li>
+					<li  role="separator" class="divider"></li>
+					<li  class="text-center"><a>其他</a></li>
+				</ul>
+	        </div>
+	        
+	     </div>
+    </div>
+    <div class="content">
+	    <div class="col-lg-3">
+	    	
+		    <div class="thumbnail leftcontent">
+		      <img src="images/head.jpg" alt="" class="img-rounded">
+		      <div class="caption">
+		        <h3>xingxiant</h3>
+		        <p>...</p>
+		         <p><a href="">add a bio</a></p>
+		         <hr>
+		      </div>
+		    </div>
+			  
+	    </div>
+	    <div class="col-lg-9">
+	    	<div class="row content_right_link_div" id="content_right_link_id">
+	    		<ul class="nav nav-pills">
+				    <li role="presentation" class=""><a href="#">Home</a></li>
+				    <li role="presentation"><a href="#">Profile</a></li>
+				    <li role="presentation"><a href="#">Messages</a></li>
+				</ul>
+			</div>
+			<h5>Popular repositories</h5>
+			<div class="row content_right_in">
+				<div class="col-lg-6 ">
+  					<div class="thumbnail">
+  						<h4><a href="#" >项目1</a></h4>
+					    <p>fdsffsfsfsfsfsf</p>
+					    <br>
+					    <span class="glyphicon glyphicon-th-large"></span>
+					    java
+					    &nbsp;&nbsp;&nbsp;&nbsp;
+					    <span class="glyphicon glyphicon-star"></span>10
+  					</div>
+  				</div>
+  				<div class="col-lg-6 ">
+  					<div class="thumbnail">
+  						<h4><a href="#" >项目1</a></h4>
+					    <p>fdsffsfsfsfsfsf</p>
+					    <br>
+					    <span class="glyphicon glyphicon-th-large"></span>
+					    java
+					    &nbsp;&nbsp;&nbsp;&nbsp;
+					    <span class="glyphicon glyphicon-star"></span>10
+  					</div>
+  				</div>
+  				<div class="col-lg-6 ">
+  					<div class="thumbnail">
+  						<h4><a href="#" >项目1</a></h4>
+					    <p>fdsffsfsfsfsfsf</p>
+					    <br>
+					    <span class="glyphicon glyphicon-th-large"></span>
+					    java
+					    &nbsp;&nbsp;&nbsp;&nbsp;
+					    <span class="glyphicon glyphicon-star"></span>10
+  					</div>
+  				</div><div class="col-lg-6 ">
+  					<div class="thumbnail">
+  						<h4><a href="#" >项目1</a></h4>
+					    <p>fdsffsfsfsfsfsf</p>
+					    <br>
+					    <span class="glyphicon glyphicon-th-large"></span>
+					    java
+					    &nbsp;&nbsp;&nbsp;&nbsp;
+					    <span class="glyphicon glyphicon-star"></span>10
+  					</div>
+  				</div>
+			</div>
+			
+
+	    </div>
 	</div>
-
-	<div class="container-fluid">
-		<div class="row-fluid">
-			<div class="span3">
-				<div class="well sidebar-nav">
-					<ul class="nav nav-list">
-						<li class="nav-header">Sidebar</li>
-						<li class="active"><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li class="nav-header">Sidebar</li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li class="nav-header">Sidebar</li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-						<li><a href="#">Link</a></li>
-					</ul>
-				</div>
-				<!--/.well -->
-			</div>
-			<!--/span-->
-			<div class="span9">
-				<div class="hero-unit">
-					<h1>Hello, world!</h1>
-					<p>This is a template for a simple marketing or informational
-						website. It includes a large callout called the hero unit and
-						three supporting pieces of content. Use it as a starting point to
-						create something more unique.</p>
-					<p>
-						<a href="#" class="btn btn-primary btn-large">Learn more »</a>
-					</p>
-				</div>
-				<div class="row-fluid">
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-					<!--/span-->
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-					<!--/span-->
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-					<!--/span-->
-				</div>
-				<!--/row-->
-				<div class="row-fluid">
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-					<!--/span-->
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-					<!--/span-->
-					<div class="span4">
-						<h2>Heading</h2>
-						<p>Donec id elit non mi porta gravida at eget metus. Fusce
-							dapibus, tellus ac cursus commodo, tortor mauris condimentum
-							nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-							malesuada magna mollis euismod. Donec sed odio dui.</p>
-						<p>
-							<a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-					<!--/span-->
-				</div>
-				<!--/row-->
-			</div>
-			<!--/span-->
-		</div>
-		<!--/row-->
-
-		<hr>
-
-		<footer>
-			<p>© Company 2013</p>
-		</footer>
-
-	</div>
-	<!--/.fluid-container-->
-
-	<!-- Le javascript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="${pageContext.request.contextPath }/js/jquery-1.8.3.js"></script>
-	<script src="${pageContext.request.contextPath }/css/bootstrap/js/bootstrap.js"></script>
-	
-
-
-
 </body>
-</html>
+
+</html> 
